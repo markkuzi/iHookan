@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCategory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentCardCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Имя"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/nameOrder"
+            tools:text="+79053215265"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descriptionOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/nameOrder"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Здесь будет большое описание заказа"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="22.02.2022 16:44"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="4000 р"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

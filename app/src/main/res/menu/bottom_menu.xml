@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeItemBottomNav"
+        android:icon="@drawable/home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/hookahItemBottomNav"
+        android:icon="@drawable/hookah"
+        android:title="@string/hookah"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/basketItemBottomNav"
+        android:icon="@drawable/basket"
+        android:title="@string/basket"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/accountItemBottomNav"
+        android:icon="@drawable/account"
+        android:title="@string/account"
+        app:showAsAction="ifRoom"/>
+
+</menu>

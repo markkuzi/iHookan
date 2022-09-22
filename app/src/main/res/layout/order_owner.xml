@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".presentation.tabs.basket.OrderOwner">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
+        app:boxBackgroundColor="@color/black"
+        app:startIconTint="@color/purple"
+        app:endIconTint="@color/purple"
+        app:boxStrokeColor="@color/purple"
+        android:hint="@string/enter_phone"
+        app:hintTextColor="@color/purple"
+        android:textColorHint="@color/purple"
+        app:startIconDrawable="@drawable/more"
+        app:endIconMode="clear_text"
+        app:boxStrokeWidthFocused="4dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterPhoneOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/purple"
+            android:backgroundTint="@color/black"/>
+
+        
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/phoneInputLayout"
+        android:layout_margin="8dp"
+        app:boxBackgroundColor="@color/black"
+        app:startIconTint="@color/purple"
+        app:endIconTint="@color/purple"
+        app:boxStrokeColor="@color/purple"
+        android:hint="@string/enter_name"
+        android:textColorHint="@color/purple"
+        app:hintTextColor="@color/purple"
+        app:startIconDrawable="@drawable/more"
+        app:endIconMode="clear_text"
+        app:boxStrokeWidthFocused="4dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterNameOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/purple"
+            android:backgroundTint="@color/black"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/addToOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/purple"
+        app:strokeColor = "@color/purple"
+        app:strokeWidth = "1dp"
+        android:text="@string/add_order"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

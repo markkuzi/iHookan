@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    tools:context=".presentation.tabs.product.DetailsProduct"
+    android:layout_marginBottom="20dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            tools:text="Название"
+            android:layout_margin="10dp"
+            android:padding="4dp"
+            android:textColor="@color/purple"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/descriptionProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/nameProduct"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Описание"
+                    android:layout_margin="10dp"
+                    android:padding="12dp"
+                    android:textColor="@color/purple" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="500"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintStart_toEndOf="@id/priceProduct"
+            android:text="@string/currency"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/add_to_basket"
+            app:iconTint="@color/purple"
+            style="@style/Widget.Material3.Button.IconButton"/>
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/clear_basket"
+            app:iconTint="@color/purple"
+            style="@style/Widget.Material3.Button.IconButton"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

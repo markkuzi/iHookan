@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/basket.xml" value="0.14" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/clear_basket.xml" value="0.2985" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/clear_basket1.xml" value="0.2985" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/favorite_active.xml" value="0.2035" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/home.xml" value="0.14" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/hookah.xml" value="0.14" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.2985" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/drawable/icon_favorites.xml" value="0.2035" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/account.xml" value="0.25" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/activity_splash.xml" value="0.18" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/basket.xml" value="0.358695652173913" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/basket_item.xml" value="0.33" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/blank_fragment.xml" value="0.358695652173913" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/details_product.xml" value="0.19746376811594202" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/drinks.xml" value="0.19791666666666666" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/home.xml" value="0.358695652173913" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/mix_tobacco.xml" value="0.19791666666666666" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/order_item.xml" value="0.5" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/order_owner.xml" value="0.394990366088632" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/product_item.xml" value="0.2569832402234637" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/product_item_test.xml" value="0.5823863636363636" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/simple_tabbaco.xml" value="0.19791666666666666" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/simple_tobacco.xml" value="0.19791666666666666" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/simple_tobbaco.xml" value="0.19791666666666666" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/layout/tobacco.xml" value="0.33" />
+        <entry key="..\:/Mark - Android Study/iHookan/app/src/main/res/menu/bottom_menu.xml" value="0.14722222222222223" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

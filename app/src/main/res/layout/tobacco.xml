@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    tools:context=".presentation.tabs.product.Tobacco">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="8dp"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorColor="@color/purple"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/purple"
+        app:tabIconTint="@color/menu_color_tab"
+        app:tabRippleColor="@color/purple"
+        android:background="@color/black"/>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/sliderTabs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:background="@color/black"/>
+
+
+
+</LinearLayout>

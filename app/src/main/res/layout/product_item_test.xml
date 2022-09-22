@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCategory"
+    android:clickable="true"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:layout_constraintTop_toTopOf="parent"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentCardCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            tools:text="Название"
+            android:layout_margin="10dp"
+            android:padding="4dp"
+            android:textColor="@color/purple"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="500"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintStart_toEndOf="@id/priceProduct"
+            android:text="@string/currency"
+            android:layout_margin="10dp"
+            android:textColor="@color/purple"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/add_to_basket"
+            app:iconTint="@color/purple"
+            style="@style/Widget.Material3.Button.IconButton"/>
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/clear_basket"
+            app:iconTint="@color/purple"
+            style="@style/Widget.Material3.Button.IconButton"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

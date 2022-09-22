@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">iHookan</string>
+    <string name="home">HOME</string>
+    <string name="hookah">HOOKAH</string>
+    <string name="basket">BASKET</string>
+    <string name="account">ACCOUNT</string>
+    <string name="currency">Р</string>
+    <string name="enter_name">Имя</string>
+    <string name="enter_phone">Номер телефона</string>
+    <string name="clear_order">Очистить заказы</string>
+    <string name="add_order">Оформить заказ</string>
+    <string name="clear_basket">Очистиь корзину</string>
+    <string name="full_price">Общая стоимость:</string>
+
+</resources>
