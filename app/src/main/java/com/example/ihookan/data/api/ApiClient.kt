@@ -12,7 +12,9 @@ class ApiClient private constructor() {
     init {
 
         retrofit =
-            Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
+            Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
     }
@@ -20,7 +22,6 @@ class ApiClient private constructor() {
     companion object {
 
         private val BASE_URL = "http://mark.lh1.in/"
-
         private var apiClient: ApiClient? = null
         private var retrofit: Retrofit? = null
 

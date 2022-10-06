@@ -2,6 +2,7 @@ package com.example.ihookan.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.ihookan.R
 import com.example.ihookan.databinding.ActivityMainBinding
 import com.example.ihookan.presentation.ViewModel.BasketViewModel
@@ -10,6 +11,7 @@ import com.example.ihookan.presentation.tabs.home.Home
 import com.example.ihookan.presentation.tabs.account.Account
 import com.example.ihookan.presentation.tabs.basket.Basket
 import com.example.ihookan.presentation.tabs.product.Tobacco
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
     private val productsViewModel: ProductsViewModel by viewModel()
     private val basketViewModel: BasketViewModel by viewModel()
+    private var viewForSnackbar: View? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding?.bottomNav?.selectedItemId = R.id.homeItemBottomNav
         getBadge()
 
+
+
         binding?.bottomNav?.setOnItemSelectedListener { item ->
 
             when(item.itemId) {
@@ -43,8 +48,6 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
 
         }
-
-
 
 
     }
@@ -64,7 +67,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
-
-
+    fun test(){
+        binding?.bottomNav?.selectedItemId = R.id.accountItemBottomNav
+    }
 }
+
