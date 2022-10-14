@@ -6,23 +6,24 @@ import com.example.ihookan.data.localDB.OrderDB
 import com.example.ihookan.data.localDB.ProductsDB
 import com.example.ihookan.data.repository.dataSource.ProductsApiDataSource
 import com.example.ihookan.data.repository.dataSource.ProductsDataSource
+import com.example.ihookan.data.repository.dataSource.orders.OrdersApiDataSource
+import com.example.ihookan.data.repository.dataSource.orders.OrdersDataSource
 import com.example.ihookan.data.repository.dataSourceIMPL.ProductsApiDataSourceIMPL
 import com.example.ihookan.data.repository.dataSourceIMPL.ProductsDataSourceIMPL
-import com.example.ihookan.data.repository.repository.BasketRepository
-import com.example.ihookan.data.repository.repository.OrderApiRepository
-import com.example.ihookan.data.repository.repository.OrderRepository
-import com.example.ihookan.data.repository.repository.ProductsRepository
+import com.example.ihookan.data.repository.dataSourceIMPL.orders.OrdersApiDataSourceIMPL
+import com.example.ihookan.data.repository.dataSourceIMPL.orders.OrdersDataSourceIMPL
+import com.example.ihookan.data.repository.repository.*
 import com.example.ihookan.domain.repository.BasketCall
-import com.example.ihookan.domain.repository.OrderApiCall
-import com.example.ihookan.domain.repository.OrderCall
+import com.example.ihookan.domain.repository.OrdersApiCall
+import com.example.ihookan.domain.repository.OrdersCall
 import com.example.ihookan.domain.repository.ProductsCall
 import com.example.ihookan.domain.useCase.BasketUseCase
-import com.example.ihookan.domain.useCase.OrderApiUseCase
-import com.example.ihookan.domain.useCase.OrderUseCase
+import com.example.ihookan.domain.useCase.OrdersApiUseCase
+import com.example.ihookan.domain.useCase.OrdersUseCase
 import com.example.ihookan.domain.useCase.ProductsUseCase
 import com.example.ihookan.presentation.ViewModel.BasketViewModel
-import com.example.ihookan.presentation.ViewModel.OrderApiViewModel
-import com.example.ihookan.presentation.ViewModel.OrderViewModel
+import com.example.ihookan.presentation.ViewModel.OrdersApiViewModel
+import com.example.ihookan.presentation.ViewModel.OrdersViewModel
 import com.example.ihookan.presentation.ViewModel.ProductsViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -87,23 +88,36 @@ val moduleOrder = module {
 
     single { get<OrderDB>().orderDao }
 
+    single<OrdersDataSource> {
+        OrdersDataSourceIMPL(
+            get()
+        )
+    }
 
-    single<OrderCall> {OrderRepository(
-        get()
-    )}
+    single<OrdersApiDataSource> {
+        OrdersApiDataSourceIMPL(
+            get()
+        )
+    }
 
-    single {OrderUseCase(get())}
+    single<OrdersCall> {
+        OrdersRepository(
+        get(), get()
+    )
+    }
 
-    viewModel { OrderViewModel(get()) }
+    single {OrdersUseCase(get())}
+
+    viewModel { OrdersViewModel(get()) }
 }
 
 val moduleOrderApi = module {
 
 
-    single<OrderApiCall> {OrderApiRepository(
+    single<OrdersApiCall> {OrdersApiRepository(
     )}
 
-    single {OrderApiUseCase(get())}
+    single {OrdersApiUseCase(get())}
 
-    viewModel { OrderApiViewModel(get()) }
+    viewModel { OrdersApiViewModel(get()) }
 }

@@ -1,43 +1,40 @@
 package com.example.ihookan.presentation.tabs.basket
 
-import android.app.Activity
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import com.example.ihookan.R
 import com.example.ihookan.data.models.BasketModel
 import com.example.ihookan.databinding.OrderOwnerBinding
 import com.example.ihookan.presentation.MainActivity
 import com.example.ihookan.presentation.ViewModel.BasketViewModel
-import com.example.ihookan.presentation.ViewModel.OrderApiViewModel
-import com.example.ihookan.presentation.ViewModel.OrderViewModel
+import com.example.ihookan.presentation.ViewModel.OrdersApiViewModel
+import com.example.ihookan.presentation.ViewModel.OrdersViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class OrderOwner : BottomSheetDialogFragment() {
     
     private var binding: OrderOwnerBinding? = null
-    private val orderViewModel: OrderViewModel by viewModel()
+    private val ordersViewModel: OrdersViewModel by viewModel()
     private val basketViewModel: BasketViewModel by viewModel()
-    private val orderApiViewModel: OrderApiViewModel by viewModel()
+    private val ordersApiViewModel: OrdersApiViewModel by viewModel()
+    var auth: FirebaseAuth? = null
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        auth = FirebaseAuth.getInstance()
         
         binding = OrderOwnerBinding.inflate(inflater, container, false)
 
@@ -45,22 +42,21 @@ class OrderOwner : BottomSheetDialogFragment() {
 
             basketViewModel.loadProductsFromBasket.observe(viewLifecycleOwner, Observer {
 
+
+                val date = getCurrentDateTime()
+                val dateNowInString = date.toString("dd.MM.yyyy, HH:mm")
+
                 val totalOrder:Int = it.sumOf<BasketModel> { it.price.toInt() }
+
 
                 val descriptionOrder:String = it.map { it.name + " - " + it.count + "шт., " + it.price + "руб.;" }.joinToString("\n")
 
-                val dateTime = LocalDateTime.now(ZoneId.of("Europe/Moscow"))
-                    .format(DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm")).toString()
+                ordersViewModel.startInsert(auth!!.currentUser?.email.toString(), descriptionOrder, totalOrder.toString(), dateNowInString)
 
-                orderViewModel.startInsert(binding?.enterNameOrder?.text.toString(), binding?.enterPhoneOrder?.text.toString(), descriptionOrder, totalOrder.toString(), dateTime)
-
-                orderApiViewModel.insert(binding?.enterNameOrder?.text.toString(), binding?.enterPhoneOrder?.text.toString(), descriptionOrder, totalOrder.toString(), dateTime)
+                ordersApiViewModel.insert(auth!!.currentUser?.email.toString(), descriptionOrder, totalOrder.toString(), dateNowInString)
             })
 
             basketViewModel.clear()
-
-
-
 
             dismiss()
 
@@ -77,6 +73,16 @@ class OrderOwner : BottomSheetDialogFragment() {
         
         
         return binding?.root
+    }
+
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault(), timeZone: TimeZone = TimeZone.getTimeZone("Europe/Moscow")): String {
+        val formatter = SimpleDateFormat(format, locale)
+        formatter.timeZone = timeZone
+        return formatter.format(this)
+    }
+
+    fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
     }
 
 }

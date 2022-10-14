@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ihookan.databinding.AccountBinding
-import com.example.ihookan.presentation.ViewModel.OrderViewModel
+import com.example.ihookan.presentation.ViewModel.OrdersViewModel
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,7 +17,7 @@ class Account : Fragment() {
 
     private var binding: AccountBinding? = null
     private var orderAdapter: OrderAdapter? = null
-    private val orderViewModel: OrderViewModel by viewModel()
+    private val ordersViewModel: OrdersViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +30,7 @@ class Account : Fragment() {
         initRecyclerProducts()
 
         binding?.clearOrder?.setOnClickListener(View.OnClickListener {
-            orderViewModel.clear()
+            ordersViewModel.clear()
         })
 
 
@@ -47,7 +47,7 @@ class Account : Fragment() {
     }
 
     private fun loadCategories() {
-        orderViewModel.loadOrder.observe(viewLifecycleOwner, Observer {
+        ordersViewModel.loadOrders.observe(viewLifecycleOwner, Observer {
             orderAdapter?.setList(it)
             orderAdapter?.notifyDataSetChanged()
         })

@@ -34,8 +34,7 @@ class OrderAdapter: RecyclerView.Adapter<OrderAdapter.OrderHolder>() {
 
         fun bind(
             orderModel: OrderModel){
-            binding.nameOrder.text = orderModel.name
-            binding.phoneOrder.text = orderModel.phone
+            binding.nameOrder.text = orderModel.email
             binding.descriptionOrder.text = orderModel.description
             binding.priceOrder.text = orderModel.price
             binding.orderDate.text = orderModel.orderDate

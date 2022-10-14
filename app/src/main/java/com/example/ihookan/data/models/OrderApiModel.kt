@@ -7,16 +7,13 @@ import java.util.*
 data class OrderApiModel(
     @SerializedName("id") @Expose
     var id: Int? = null,
-    @SerializedName("name") @Expose
-    var name: String? = null,
-    @SerializedName("phone") @Expose
-    var phone: String? = null,
+    @SerializedName("email") @Expose
+    var email: String? = null,
     @SerializedName("description") @Expose
     var description: String? = null,
     @SerializedName("orderPrice") @Expose
     var orderPrice: String? = null,
     @SerializedName("orderDate") @Expose
     var orderDate: String? = null
-
 
 )

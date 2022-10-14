@@ -11,11 +11,8 @@ class OrderModel(
     @ColumnInfo(name = "order_id")
     val id:Int,
 
-    @ColumnInfo(name = "order_name")
-    val name:String,
-
-    @ColumnInfo(name = "order_phone")
-    val phone:String,
+    @ColumnInfo(name = "order_email")
+    val email:String,
 
     @ColumnInfo(name = "order_description")
     val description:String,
